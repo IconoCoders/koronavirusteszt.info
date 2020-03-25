@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel='stylesheet' id='cc-css_v3-css'  href='https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css?ver=1.6.0' type='text/css' media='all' />
 
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
@@ -24,6 +25,7 @@
         body {
             font-family: 'Montserrat', sans-serif;
             font-size: 14px;
+            text-shadow: none !important;
         }
 
         .symptomdescr {
@@ -184,6 +186,16 @@
             max-width: 375px !important;
             margin: 0 auto !important;
         }
+
+        .covid-alert {
+            background-color: red;
+            color: white;
+            width: 100%;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            text-align: center;
+            text-shadow: none;
+        }
     </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -195,6 +207,19 @@
 
       gtag('config', 'UA-155316924-3');
     </script>
+
+    <!-- Default Statcounter code for Koronavirusteszt.info
+    https://koronavirusteszt.info -->
+    <script type="text/javascript">
+        var sc_project=12225049;
+        var sc_invisible=1;
+        var sc_security="38eb3cb1";
+        var sc_https=1;
+    </script>
+    <script type="text/javascript"
+            src="https://www.statcounter.com/counter/counter.js"
+            async></script>
+    <!-- End of Statcounter Code -->
 </head>
 
 <body>
@@ -275,12 +300,17 @@
 </script>
 
 <!-- Toolbar -->
-<div data-role="header" style="background-color: #3c8dbc; border: none;">
-    <h1 style="text-shadow: none; color: #fff; font-size: 20px; padding: .6em 0; font-weight: 300; margin: 0 10%;">
-        Koronavírus teszt</h1>
+<div data-role="header" style="background-color: #3c8dbc;
+            border: none;">
+    <h1 style="text-shadow: none;
+            color: #fff;
+            font-size: 20px;
+            padding: .6em 0;
+            font-weight: 300;
+            margin: 0 10%;">Koronavírus teszt</h1>
 </div>
 
-<div style="background-color: red;color: white; width: 100%; padding: 10px; text-align: center; text-shadow: none;">
+<div class="covid-alert">
     Ez <b>NEM</b> egy hivatalos, hitelesített teszt, csak a tünetek felismerését segíti! Amennyiben valójában tüneteket
     észlel magán jelentkezzen háziorvosánál!<br/>
     <a href="https://koronavirus.gov.hu/mit-tegyunk-tunetek-eseten" style="color: white; text-decoration: underline"
@@ -468,6 +498,31 @@
         });
 
     });
+</script>
+
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js?ver=1.6.0'></script>
+
+<script>
+    window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#333",
+                    "text": "#ffffff"
+                },
+                "button": {
+                    "background": "#f1d600"
+                }
+            },
+            "content": {
+                "allow": "Cookiek<br/> engedélyezése",
+                "message": "Az alkalkalmazás használatkor személyes adatokat nem rögzítünk, csak látogatottsági adatokat mérünk!",
+                "dismiss": "Rendben",
+                "deny": "Elutasítom",
+                "link": "",
+                "href": ""
+            }
+        })});
 </script>
 
 </body>
