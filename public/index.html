@@ -312,7 +312,7 @@
 
 <div class="covid-alert">
     Ez <b>NEM</b> egy hivatalos, hitelesített teszt, csak a tünetek felismerését segíti! Amennyiben valójában tüneteket
-    észlel magán jelentkezzen háziorvosánál!<br/>
+    észlel magán <b>keresse telefonon</b> háziorvosát!<br/>
     <a href="https://koronavirus.gov.hu/mit-tegyunk-tunetek-eseten" style="color: white; text-decoration: underline"
        target="_blank" rel="noopener">Koronavírus tájékoztató oldal</a>
 </div>
@@ -334,7 +334,7 @@
         <div style="text-align: center">
             Eredmény:
             <div id="total" class="total"></div>
-            212 pont felett érdemes mielőbb konzultálnia háziorvosával!
+            212 pont felett érdemes mielőbb konzultálnia háziorvosával telefonon!
         </div>
         <h1>Mit tegyünk tünetek esetén?</h1>
         <p><b>A betegség leggyakoribb tünetei:</b></p>
@@ -349,6 +349,7 @@
             betartani az ajánlásokat, a szabályokat.</p>
 
         <p><b>Maradjon otthon, ne menjen közösségbe!</b></p>
+        <p><b>Müller Cecília elmondta, nem hívják be a rendelőkbe azokat, akiknek légúti panaszaik vannak, azoktól azt kérik továbbra is, hogy maradjanak otthon, telefonon hívják a háziorvost!</b></p>
 
         <a
                 href="https://koronavirus.gov.hu/cikkek/enyhe-tunetekkel-otthoni-karantenban-kell-maradni"
@@ -382,9 +383,9 @@
 
     function updateResults(totalscore) {
         if (totalscore > 212) {
-            $("#results").append("<b>Eredménye:</b> " + totalscore.toFixed(1) + "<br/> Javasolt, hogy a lehető leghamarabb konzultáljon háziorvosával!");
+            $("#results").append("<b>Eredménye:</b> " + totalscore.toFixed(1) + "<br/> Javasolt, hogy a lehető leghamarabb konzultáljon háziorvosával telefonon!");
         } else {
-            $("#results").append("<b>Eredménye:</b> " + totalscore.toFixed(1) + "<br/> Ön valószínüleg NEM fertőzött. Azonban amennyiben további tüneteket észlel, vagy bizonytalan mindenképpen egyeztessen háziorvosával!");
+            $("#results").append("<b>Eredménye:</b> " + totalscore.toFixed(1) + "<br/> Ön valószínüleg NEM fertőzött. Azonban amennyiben további tüneteket észlel, vagy bizonytalan mindenképpen egyeztessen háziorvosával telefonon!");
         }
 
         if ($("#results").css("display") == "block") {
