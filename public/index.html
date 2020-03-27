@@ -22,6 +22,18 @@
             integrity="sha256-MPgtcamIpCPKRRm1ppJHkvtNBAuE71xcOM+MmQytXi8=" crossorigin="anonymous"></script>
 
     <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        .app {
+            padding: 10px;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
             font-size: 14px;
@@ -110,10 +122,11 @@
             width: -webkit-fill-available;
             height: 340px;
             display: block;
+            /*margin-top: 10px;*/
             margin-left: 5px;
             margin-right: 5px;
             margin-bottom: 10px;
-            background-size: auto 100% !important;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
         }
@@ -157,18 +170,25 @@
         }
 
         #footer {
+            border-top: solid 1px #ccc;
+            margin-top: 20px;
             text-align: center;
             padding: 10px;
-            font-size: 1em;
+            font-size: 0.875em;
+        }
+
+        .ui-button {
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
 
         .button-yes {
-            width: 150px !important;
+            width: 100%;
             display: inline-block;
         }
 
         .button-no {
-            width: 150px !important;
+            width: 100%;
             display: inline-block;
         }
 
@@ -178,6 +198,7 @@
         }
 
         .button-inner {
+            width: 48%;
             display: inline-block;
         }
 
@@ -317,45 +338,47 @@
        target="_blank" rel="noopener">Koronavírus tájékoztató oldal</a>
 </div>
 
-<!-- Questionaire -->
-<div id="container">
-    <div id="questions"></div>
-    <div class="results" id="results"></div>
-</div>
-
-<!-- Symptom Checklist -->
-<div class="widget">
-    <div id="checklist" class="controlgroup-vertical">
+<main class="app">
+    <!-- Questionaire -->
+    <div id="container">
+        <div id="questions"></div>
+        <div class="results" id="results"></div>
     </div>
-</div>
 
-<div id="totaldescr">
-    <div class="container">
-        <div style="text-align: center">
-            Eredmény:
-            <div id="total" class="total"></div>
-            212 pont felett érdemes mielőbb konzultálnia háziorvosával telefonon!
+    <!-- Symptom Checklist -->
+    <div class="widget">
+        <div id="checklist" class="controlgroup-vertical">
         </div>
-        <h1>Mit tegyünk tünetek esetén?</h1>
-        <p><b>A betegség leggyakoribb tünetei:</b></p>
-        <p><b>A leggyakoribb tünetek: a láz, a fáradtság és a száraz köhögés.</b></p>
-        <p>Egyes betegeknél jelentkezhet <b>izomfájdalom, orrdugulás, orrfolyás, torokfájás, hasmenés, légszomj</b>.</p>
-        <p>Ezek a <b>tünetek általában enyhék és fokozatosan jelentkeznek</b>.</p>
-        <p><b>Vannak olyan fertőzöttek, akiknél nem alakul ki semmilyen tünet</b> és nem érzik magukat betegnek.</p>
-
-        <p><b>Mit tegyen, ha Ön potenciálisan fertőzöttnek érzi magát?</b></p>
-        <p>A koronavírus most már mindenhol ott lehet Magyarországon is. Bárki hordozhatja a vírust és bárkinek
-            tovább adhatja a fertőzést. Fontos, hogy lassítsuk a járvány terjedését.&nbsp;Ezért fontos mindenkinek
-            betartani az ajánlásokat, a szabályokat.</p>
-
-        <p><b>Maradjon otthon, ne menjen közösségbe!</b></p>
-        <p><b><a href="https://index.hu/belfold/2020/03/25/operativ_torzs/tovabbra_is_az_a_keres_hogy_leguti_panaszokkal_ne_menjenek_a_haziorvosi_rendelobe/" target="_blank" rel="noopener">Müller Cecília elmondta</a>, nem hívják be a rendelőkbe azokat, akiknek légúti panaszaik vannak, azoktól azt kérik továbbra is, hogy maradjanak otthon, telefonon hívják a háziorvost!</b></p>
-
-        <a
-                href="https://koronavirus.gov.hu/cikkek/enyhe-tunetekkel-otthoni-karantenban-kell-maradni"
-                id="LPlnk690727" target="_blank" rel="noopener">https://koronavirus.gov.hu/cikkek/enyhe-tunetekkel-otthoni-karantenban-kell-maradni</a>
     </div>
-</div>
+
+    <div id="totaldescr">
+        <div class="container">
+            <div style="text-align: center">
+                Eredmény:
+                <div id="total" class="total"></div>
+                212 pont felett érdemes mielőbb konzultálnia háziorvosával telefonon!
+            </div>
+            <h1>Mit tegyünk tünetek esetén?</h1>
+            <p><b>A betegség leggyakoribb tünetei:</b></p>
+            <p><b>A leggyakoribb tünetek: a láz, a fáradtság és a száraz köhögés.</b></p>
+            <p>Egyes betegeknél jelentkezhet <b>izomfájdalom, orrdugulás, orrfolyás, torokfájás, hasmenés, légszomj</b>.</p>
+            <p>Ezek a <b>tünetek általában enyhék és fokozatosan jelentkeznek</b>.</p>
+            <p><b>Vannak olyan fertőzöttek, akiknél nem alakul ki semmilyen tünet</b> és nem érzik magukat betegnek.</p>
+
+            <p><b>Mit tegyen, ha Ön potenciálisan fertőzöttnek érzi magát?</b></p>
+            <p>A koronavírus most már mindenhol ott lehet Magyarországon is. Bárki hordozhatja a vírust és bárkinek
+                tovább adhatja a fertőzést. Fontos, hogy lassítsuk a járvány terjedését.&nbsp;Ezért fontos mindenkinek
+                betartani az ajánlásokat, a szabályokat.</p>
+
+            <p><b>Maradjon otthon, ne menjen közösségbe!</b></p>
+            <p><b><a href="https://index.hu/belfold/2020/03/25/operativ_torzs/tovabbra_is_az_a_keres_hogy_leguti_panaszokkal_ne_menjenek_a_haziorvosi_rendelobe/" target="_blank" rel="noopener">Müller Cecília elmondta</a>, nem hívják be a rendelőkbe azokat, akiknek légúti panaszaik vannak, azoktól azt kérik továbbra is, hogy maradjanak otthon, telefonon hívják a háziorvost!</b></p>
+
+            <a
+                    href="https://koronavirus.gov.hu/cikkek/enyhe-tunetekkel-otthoni-karantenban-kell-maradni"
+                    id="LPlnk690727" target="_blank" rel="noopener">https://koronavirus.gov.hu/cikkek/enyhe-tunetekkel-otthoni-karantenban-kell-maradni</a>
+        </div>
+    </div>
+</main>
 
 <div id="footer" class="footer">
     <p>Az online teszt algoritmusát<br/>
