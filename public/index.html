@@ -2,13 +2,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:title" content="Koronavírus Online Teszt">
+    <meta property="og:title" content="KoronavírusTeszt">
+
     <meta property="og:site_name" content="KoronavírusTeszt">
-    <meta property="og:url" content="Koronavírus Online Teszt">
-    <meta property="og:description" content="Koronavírus Online Teszt">
+    <meta property="og:url" content="Becsülje meg a COVID-19 kockázatát ezzel a szűrőeszközzel">
+    <meta property="og:description" content="Becsülje meg a COVID-19 kockázatát ezzel a szűrőeszközzel">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://screencovid.com/public/images/covid19.jpg">
-    <title>Koronavírus Online Teszt</title>
+    <title>KoronavírusTeszt</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
@@ -202,6 +203,24 @@
             display: inline-block;
         }
 
+        .side-panel-btn {
+            margin: 0 0 0 10px !important;
+            border-width: 0;
+            background-color: transparent !important;
+        }
+
+        .side-panel-btn:hover {
+            background-color: #3a84af !important;
+        }
+
+        .side-panel-btn:active {
+            background-color: #34779e !important;
+        }
+
+        #menu-icon {
+            fill: #fff;
+        }
+
         .checklist-label {
             text-align: center !important;
             max-width: 375px !important;
@@ -271,7 +290,7 @@
         {
             'id': 'q3',
             'value': 53.5,
-            'question': 'Fáradtság (extra fáradtság)?',
+            'question': 'Extra fáradtság érzése?',
             'image_url': 'public/images/fatigue.svg'
         },
         {'id': 'q4', 'value': 40, 'question': 'Étvágytalanság?', 'image_url': 'public/images/no_appetite.svg'},
@@ -303,36 +322,60 @@
             'question': 'Hányinger/hányás vagy hasmenés?',
             'image_url': 'public/images/nausea.svg'
         },
-        {'id': 'q13', 'value': 51.9, 'question': 'Krónikus betegség?', 'image_url': 'public/images/chronic.svg'},
+        {'id': 'q13', 'value': 51.9, 'question': 'Krónikus betegség? (Rizikófaktor)', 'image_url': 'public/images/chronic.svg'},
         {
             'id': 'q14',
             'value': 215,
-            'question': 'Mellkasi fájdalom vagy mellkasi nyomás vagy szabálytalan szívverés?',
+            'question': 'Mellkasi fájdalom/mellkasi nyomás vagy szabálytalan szívverés? (Rizikófaktor)',
             'image_url': 'public/images/heart.svg'
         },
         {'id': 'q15', 'value': 214, 'question': 'Kékes ajkak vagy az arc?', 'image_url': 'public/images/blue.svg'},
         {
+            'id': 'q17',
+            'value': 15,
+            'question': 'Ízlés vagy szaglás elvesztése?',
+            'image_url': 'public/images/no_smell.svg'
+        },
+        {
             'id': 'q16',
             'value': 51.9,
-            'question': 'Idősebb mint 50 vagy fiatalabb mint 5?',
+            'question': 'Idősebb mint 50 vagy fiatalabb mint 5? (Rizikófaktor)',
             'image_url': 'public/images/man_and_child.svg'
         },
     ];
 </script>
 
+<!-- Side Panel -->
+<div data-role="panel" id="sidepanel" data-position="left" data-display="overlay"
+     style="background-color: #f9f9f9;">
+    <br>
+    <h2 class="slide-panel-header">KoronavírusTeszt</h2>
+    <img id="virus-img" src="https://screencovid.com/images/covid19.jpg" alt="COVID-19 Virus" width="50%">
+    <h4 class="slide-panel-header">Becsülje meg a COVID-19 kockázatát</h4>
+
+    <a href="https://koronavirus.gov.hu/" target="_blank" rel="noopener" class="ui-btn">koronavirus.gov.hu</a>
+    <a href="https://www.screencovid.org/" target="_blank" rel="noopener" class="ui-btn">A tesztről bővebben</a>
+    <a href="https://github.com/tconley/screencovid.com/raw/master/Presentation_Prescreencovid_v9_03202020.pdf" target="_blank" rel="noopener" class="ui-btn">Az algoritmusról</a>
+    <a href="https://github.com/iconocoders/koronavirusteszt.info/" target="_blank" rel="noopener" class="ui-btn">Közreműködés</a>
+</div>
+
 <!-- Toolbar -->
-<div data-role="header" style="background-color: #3c8dbc;
-            border: none;">
+<div data-role="header" style="background-color: #3c8dbc; border: none;">
+    <a class="side-panel-btn vertical-center ui-btn-left ui-btn ui-btn-inline  ui-corner-all" href="#sidepanel">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 8 8">
+            <path id="menu-icon" d="M0 0v1h8v-1h-8zm0 2.97v1h8v-1h-8zm0 3v1h8v-1h-8z" transform="translate(0 1)"/>
+        </svg>
+    </a>
     <h1 style="text-shadow: none;
             color: #fff;
             font-size: 20px;
             padding: .6em 0;
             font-weight: 300;
-            margin: 0 10%;">Koronavírus teszt</h1>
+            margin: 0 10%;">KoronavírusTeszt</h1>
 </div>
 
 <div class="covid-alert">
-    Ez <b>NEM</b> egy hivatalos, hitelesített teszt, csak a tünetek felismerését segíti!<br/> Amennyiben valójában tüneteket
+    Ez <b>NEM</b> egy hivatalos, hitelesített teszt, csak a rizikófaktor felmérését segíti!<br/> Amennyiben valójában tüneteket
     észlel magán <b>keresse telefonon</b> háziorvosát!<br/>
     <a href="https://koronavirus.gov.hu/mit-tegyunk-tunetek-eseten" style="color: white; text-decoration: underline"
        target="_blank" rel="noopener">Koronavírus tájékoztató oldal</a>
@@ -356,7 +399,8 @@
             <div style="text-align: center">
                 Eredmény:
                 <div id="total" class="total"></div>
-                212 pont felett érdemes mielőbb konzultálnia háziorvosával telefonon!
+                212 pont felett érdemes mielőbb konzultálnia háziorvosával telefonon!<br/>
+                <a href="https://github.com/tconley/screencovid.com/#recommendations-based-on-symptoms" target="_blank" rel="noopener">260 pont felett magas rizikófaktor</a>!
             </div>
             <h1>Mit tegyünk tünetek esetén?</h1>
             <p><b>A betegség leggyakoribb tünetei:</b></p>
@@ -387,14 +431,6 @@
         Yun, Ph.D & Sijung Yun, Ph.D (Bioinformatics adjunct professors, Johns Hopkins
         University)</a> készítette.
     <p>
-    <p>
-    Az eredeti alkalmazás megtalálható <a href="https://www.screencovid.com/" target="_blank" rel="noopener">ScreenCovid.com
-        címen</a>
-    </p>
-    <p>További információk: <a href="https://www.screencovid.org" target="_blank" rel="noopener">ScreenCovid.org</a></p>
-    <p><a href="https://github.com/iconocoders/koronavirusteszt.info/">Közreműködés az alkalmazás fejlesztésében</a>
-    <p><a href="https://github.com/tconley/screencovid.com/">Közreműködés az alkalmazás fejlesztésében (angol
-    verzió)</a>
 </div>
 
 <div id="test-area"></div>
@@ -408,7 +444,7 @@
         if (totalscore > 212) {
             $("#results").append("<b>Eredménye:</b> " + totalscore.toFixed(1) + "<br/> Javasolt, hogy a lehető leghamarabb konzultáljon háziorvosával telefonon!");
         } else {
-            $("#results").append("<b>Eredménye:</b> " + totalscore.toFixed(1) + "<br/> Ön valószínüleg NEM fertőzött. Azonban amennyiben további tüneteket észlel, vagy bizonytalan mindenképpen egyeztessen háziorvosával telefonon!");
+            $("#results").append("<b>Eredménye:</b> " + totalscore.toFixed(1) + "<br/> Pontszáma nem éri el a COVID-19 gyanú küszöbértékét. Azonban amennyiben további tüneteket észlel, vagy bizonytalan mindenképpen egyeztessen háziorvosával telefonon!");
         }
 
         if ($("#results").css("display") == "block") {
